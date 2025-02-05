@@ -1,12 +1,12 @@
 [
     {
       "id" : 1,
-      "title": "Remera Nike",
-      "description": "Remera deportiva",
-      "code": "pgm232",
-      "price": 250,
+      "title": "Pelota Cuerva",
+      "description": "La pelota de fútbol azulgrana mas linda de todas",
+      "code": "pjajjdd776",
+      "price": 40000,
       "status": true,
-      "stock": 10,
+      "stock": 12,
       "category": "remeras",
       "thumbnail": ""
     }

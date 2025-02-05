@@ -3,5 +3,9 @@ class CartManager{
       this.pathFile = pathFile;
     }
 }
-  
+ 
+//addCart
+//getCartById
+//addProductInCartById
+
   export default CartManager;
