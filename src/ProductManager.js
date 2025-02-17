@@ -5,6 +5,37 @@ class ProductManager {
     this.pathFile = pathFile;
   }
 
+  get = async (id) => {
+    try {
+      const products = await this.getProducts();
+      if (id) {
+        const product = products.find(p => p.id == id);
+        return product || null;
+      }
+      return products;
+    } catch (error) {
+      throw new Error(`Error al obtener productos: ${error.message}`);
+    }
+  };
+  
+  put = async (id, updatedData) => {
+    try {
+      const products = await this.getProducts();
+      const index = products.findIndex(p => p.id == id);
+      if (index === -1) {
+        return null;
+      }
+      const updatedProduct = { ...products[index], ...updatedData };
+      products[index] = updatedProduct;
+      await fs.promises.writeFile(this.pathFile, JSON.stringify(products, null, 2));
+      return updatedProduct;
+    } catch (error) {
+      throw new Error(`Error al actualizar el producto: ${error.message}`);
+    }
+  };
+  
+  
+
   getProducts = async () => {
     try {
       const fileData = await fs.promises.readFile(this.pathFile, 'utf-8');
@@ -18,7 +49,7 @@ class ProductManager {
   getProductById = async (id) => {
     try {
       const products = await this.getProducts();
-      const product = products.find(p => p.id === id);
+      const product = products.find(p => p.id == id);
       return product || null;
     } catch (error) {
       throw new Error(`Error al obtener el producto por ID: ${error.message}`);
@@ -41,7 +72,7 @@ class ProductManager {
   updateProduct = async (id, updatedData) => {
     try {
       const products = await this.getProducts();
-      const index = products.findIndex(p => p.id === id);
+      const index = products.findIndex(p => p.id == id);
       
       if (index === -1) {
         return null;
@@ -59,7 +90,7 @@ class ProductManager {
   deleteProduct = async (id) => {
     try {
       const products = await this.getProducts();
-      const index = products.findIndex(p => p.id === id);
+      const index = products.findIndex(p => p.id == id);
 
       if (index === -1) {
         return null;

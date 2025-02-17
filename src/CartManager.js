@@ -61,6 +61,25 @@ class CartManager {
       throw new Error(`Error al agregar el producto al carrito: ${error.message}`);
     }
   };
+
+  clearCart = async (cartId) => {
+    try {
+      const carts = await this.getCarts();
+      const cart = carts.find(c => c.id === cartId);
+  
+      if (!cart) {
+        return null;
+      }
+  
+      cart.products = [];
+  
+      await fs.promises.writeFile(this.pathFile, JSON.stringify(carts, null, 2));
+      return cart;
+    } catch (error) {
+      throw new Error(`Error al vaciar el carrito: ${error.message}`);
+    }
+  };
+  
 }
 
 export default CartManager;

@@ -1,13 +1,13 @@
 [
-    {
-      "id" : 1,
-      "title": "Pelota Cuerva",
-      "description": "La pelota de fútbol azulgrana mas linda de todas",
-      "code": "pjajjdd776",
-      "price": 40000,
-      "status": true,
-      "stock": 12,
-      "category": "remeras",
-      "thumbnail": ""
-    }
-  ]
+  {
+    "id": 2,
+    "title": "Peloitaa Cuerva",
+    "description": "La pelota de fútbol azulgrana mas linda de todas",
+    "code": "pjajjdd776",
+    "price": 40000,
+    "status": true,
+    "stock": 12,
+    "category": "remeras",
+    "thumbnail": ""
+  }
+]
