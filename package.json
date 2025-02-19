@@ -10,9 +10,11 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "type":"module",
+  "type": "module",
   "dependencies": {
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "express-handlebars": "^8.0.1",
+    "socket.io": "^4.8.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"

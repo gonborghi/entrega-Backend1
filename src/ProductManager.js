@@ -22,7 +22,7 @@ class ProductManager {
     try {
       const products = await this.getProducts();
       const index = products.findIndex(p => p.id == id);
-      if (index === -1) {
+      if (index == -1) {
         return null;
       }
       const updatedProduct = { ...products[index], ...updatedData };
